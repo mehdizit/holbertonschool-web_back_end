@@ -14,7 +14,6 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
             Tuple with string as first item and int or float as second item
     """
 
-    #result: Tuple(str, Union[int, float])
     result = (k, v**2)
 
     return result
