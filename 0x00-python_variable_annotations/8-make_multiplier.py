@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+""" Complex types - functions
+"""
+from typing import Callable
+
+
+def make_multiplier(multiplier: float) -> Callable[[float], float]:
+    """ returns a function that multiplies a float by multiplier
+        Args:
+            multiplier: float
+        Returns: function
+    """
+    def multi(x: float):
+        """ returns a function that multiplies a float by multiplier
+        Args:
+            x: float
+        Returns: multiplication
+        """
+        return x * multiplier
+    return multi
