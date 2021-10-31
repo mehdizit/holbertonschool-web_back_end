@@ -8,13 +8,20 @@ class FIFOCache(BaseCaching):
     def __init__(self):
         super().__init__()
         self.data = {}
+        print(self.data)
+        print(self.cache_data)
         self.next_in, self.next_out = 0, 0
+        #print(self.next_in)
+        #print(self.next_out)
+    
 
     def _pop(self):
         """ FIFO algorithm, remove element """
         self.next_out += 1
         key = self.data[self.next_out]
+  
         del self.data[self.next_out], self.cache_data[key]
+        print(key)
 
     def _push(self, key, item):
         """ FIFO algorithm, add element """
@@ -32,6 +39,10 @@ class FIFOCache(BaseCaching):
                 self.cache_data[key] = item
             else:
                 self._push(key, item)
+        print(self.data)
+        print(self.cache_data)
+        #print(self.next_in)
+        #print(self.next_out)
 
     def get(self, key):
         """ Return the value linked """
@@ -40,3 +51,4 @@ class FIFOCache(BaseCaching):
         if key in self.cache_data:
             value = self.cache_data[key]
             return value
+        
