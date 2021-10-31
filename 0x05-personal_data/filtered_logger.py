@@ -53,7 +53,6 @@ def filter_datum(fields: List[str], redaction: str, message: str, separator: str
     return separator.join(lst)
 
 def get_db() -> mysql.connector.connection.MySQLConnection:
-    """"""
+    """returns a connector to the database"""
     cnx = mysql.connector.connect(user= os.getenv('PERSONAL_DATA_DB_USERNAME'), password= os.getenv('PERSONAL_DATA_DB_PASSWORD', ''), host= os.getenv('PERSONAL_DATA_DB_HOST', 'localhost'), database= os.getenv('PERSONAL_DATA_DB_NAME', 'root'))
     return cnx
-    
