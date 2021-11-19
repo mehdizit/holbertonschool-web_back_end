@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ set up a basic Flask app. """
 from flask import Flask, jsonify
+app = Flask(__name__)
 
 @app.route('/', methods=['GET'], strict_slashes=False)
 def welcome():
